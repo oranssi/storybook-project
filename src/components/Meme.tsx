@@ -46,10 +46,12 @@ const Meme: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-white space-y-4">
-      <div className="relative p-4 mb-4" ref={memeRef}>
-        <img src={randomImg} alt="Meme Image" crossOrigin="anonymous" className="w-auto max-w-md max-h-md mx-auto" />
-        <h2 className="absolute top-0 left-0 right-0 text-center text-white font-bold text-2xl p-4">{topText}</h2>
-        <h2 className="absolute bottom-0 left-0 right-0 text-center text-white font-bold text-2xl p-4">{bottomText}</h2>
+      <div className="relative p-4 mb-4 bg-transparent">
+        <div ref={memeRef}>
+            <img src={randomImg} alt="Meme Image" crossOrigin="anonymous" className="w-auto max-w-md max-h-md mx-auto" />
+            <h2 className="absolute top-0 left-0 right-0 text-center text-white font-bold text-2xl p-4">{topText}</h2>
+            <h2 className="absolute bottom-0 left-0 right-0 text-center text-white font-bold text-2xl p-4">{bottomText}</h2>
+        </div>
       </div>
 
       <div className="space-y-2">
@@ -72,10 +74,7 @@ const Meme: React.FC = () => {
       <button onClick={handleNewImage} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
         Generate New Image
       </button>
-
-      <button onClick={handleSave} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Save Image
-        </button>
+ 
     </div>
   );
 }
